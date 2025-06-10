@@ -1,7 +1,8 @@
 ---
 title: "My First Post"
 author: "Jalal El Hazzat"
-date: "2025-06-10"
+date: "2025-06-08"
+date-modified: "2025-06-09"
 categories: [math, space, control]
 image: "image.jpg"
 ---

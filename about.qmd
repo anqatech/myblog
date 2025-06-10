@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Jalal El Hazzat"
 image: profile.jpg
 about:
   template: jolla
