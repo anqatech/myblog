@@ -6,6 +6,7 @@ website:
   title: "My First Quarto Blog"
   description: "A blog about multibody dynamics"
   navbar:
+    pinned: true
     right:
       - about.qmd
       - icon: github

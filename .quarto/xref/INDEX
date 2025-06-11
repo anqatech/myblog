@@ -13,5 +13,8 @@
   },
   "posts/my-first-post/index.qmd": {
     "index.html": "28af8b14"
+  },
+  "posts/rotation-matrix/sympy-rotation-quarto.ipynb": {
+    "sympy-rotation-quarto.html": "98aa5aa4"
   }
 }
