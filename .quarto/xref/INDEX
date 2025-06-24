@@ -1,23 +1,14 @@
 {
   "index.qmd": {
-    "index.html": "30c7a8a9"
-  },
-  "posts/post-with-code/index.qmd": {
-    "index.html": "57cccc7f"
-  },
-  "posts/welcome/index.qmd": {
-    "index.html": "8cbff054"
-  },
-  "about.qmd": {
-    "about.html": "12d39d04"
-  },
-  "posts/my-first-post/index.qmd": {
-    "index.html": "28af8b14"
-  },
-  "posts/rotation-matrix/sympy-rotation-quarto.ipynb": {
-    "sympy-rotation-quarto.html": "98aa5aa4"
+    "index.html": "33875428"
   },
   "posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.ipynb": {
-    "GAF-and-GIF-Rigid-Body-Quarto.html": "fa8598ae"
+    "GAF-and-GIF-Rigid-Body-Quarto.html": "26bd8be5"
+  },
+  "posts/rotation-matrix/sympy-rotation-quarto.ipynb": {
+    "sympy-rotation-quarto.html": "c0e2b95d"
+  },
+  "about.qmd": {
+    "about.html": "cc6f8028"
   }
 }

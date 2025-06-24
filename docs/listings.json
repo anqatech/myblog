@@ -3,10 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html",
-      "/posts/rotation-matrix/sympy-rotation-quarto.html",
-      "/posts/post-with-code/index.html",
-      "/posts/my-first-post/index.html",
-      "/posts/welcome/index.html"
+      "/posts/rotation-matrix/sympy-rotation-quarto.html"
     ]
   }
 ]
