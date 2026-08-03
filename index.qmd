@@ -1,14 +1,122 @@
 ---
-title: "My First Quarto Blog"
+title: "Dynamics to Intelligence"
+description: "Modelling and controlling complex physical systems—from space structures to world models."
 listing:
+  id: recent-posts
   contents: posts
   sort: "date desc"
-  type: grid
-  categories: true
+  type: default
+  categories: false
   sort-ui: false
   filter-ui: false
+  fields: [image, date, title, description]
+  date-format: "MMM D, YYYY"
 page-layout: full
 title-block-banner: false
 ---
 
+::: {.home-hero}
+::: {.hero-copy}
+<p class="eyebrow">Jalal El Hazzat · Space engineering</p>
 
+# Dynamics to Intelligence
+
+<p class="hero-deck">Modelling and controlling complex physical systems—from space structures to world models.</p>
+
+<p class="hero-intro">A working notebook on the ideas that connect mechanics, simulation, control, and physical intelligence.</p>
+
+::: {.hero-actions}
+[Explore the field notes](#field-notes){.button .button-primary}
+[Read the story](about.qmd){.button .button-secondary}
+:::
+:::
+
+::: {.hero-visual aria-hidden="true"}
+<p class="visual-kicker">A working loop</p>
+
+::: {.model-loop}
+::: {.loop-node}
+<span class="loop-index">01</span>
+<strong>MODEL</strong>
+<small>represent</small>
+:::
+
+::: {.loop-node}
+<span class="loop-index">02</span>
+<strong>PREDICT</strong>
+<small>understand</small>
+:::
+
+::: {.loop-node}
+<span class="loop-index">03</span>
+<strong>CONTROL</strong>
+<small>shape</small>
+:::
+:::
+
+<p class="model-equation">ẋ = f(x, u)</p>
+:::
+:::
+
+::: {.journey-strip}
+<span class="journey-label">THE JOURNEY</span>
+<span>SPACE</span><i>→</i><span>GNC</span><i>→</i><span>DYNAMICS</span><i>→</i><span>FLEXIBLE STRUCTURES</span><i>→</i><span>PHYSICAL AI</span>
+:::
+
+::: {.home-section .home-intro}
+<p class="section-kicker">THE GUIDING QUESTION</p>
+
+## How do we model a physical system well enough to understand, simulate, and control it?
+
+The scale changes—from rigid bodies to flexible structures, from analytical equations to learned representations—but the question stays the same.
+:::
+
+::: {.topic-grid}
+::: {.topic-card}
+<span class="topic-index">01</span>
+
+### Dynamics
+
+Rigid bodies, Kane's equations, reference frames, and multibody systems.
+:::
+
+::: {.topic-card}
+<span class="topic-index">02</span>
+
+### Flexible Structures
+
+Beam theory, vibration modes, continuum mechanics, and finite elements.
+:::
+
+::: {.topic-card}
+<span class="topic-index">03</span>
+
+### Control
+
+GNC, pointing manoeuvres, vibration suppression, and input shaping.
+:::
+
+::: {.topic-card}
+<span class="topic-index">04</span>
+
+### Computational Methods
+
+SymPy, Simscape, numerical models, and reduced-order modelling.
+:::
+
+::: {.topic-card}
+<span class="topic-index">05</span>
+
+### Physical AI
+
+Learned dynamics, world models, simulation, and intelligent control.
+:::
+:::
+
+::: {.home-section .notes-heading}
+<p class="section-kicker">WRITING IN PUBLIC</p>
+
+## Field notes {#field-notes}
+
+Derivations, experiments, and explanations from an evolving engineering practice.
+:::

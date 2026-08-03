@@ -1,0 +1,12 @@
+channels:
+  - defaults
+
+dependencies:
+  - python=3.13
+  - jupyter
+  - ipykernel
+  - numpy
+  - pandas
+  - sympy
+  - scipy
+  - matplotlib

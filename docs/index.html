@@ -2,17 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Modelling and controlling complex physical systems—from space structures to world models.">
 
-<title>My First Quarto Blog</title>
+<title>Dynamics to Intelligence</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9f43a20c679eb76b4703ca291990b4b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9d882aefbe6880e209bb4e231fcedeb2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fff9c017eab8c161050d88c5c55d9c45.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,20 +78,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-recent-posts .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-recent-posts'] = new List('listing-recent-posts', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -97,9 +104,10 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -112,7 +120,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -129,6 +137,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Dynamics to Intelligence">
+<meta property="og:description" content="Modelling and controlling complex physical systems—from space structures to world models.">
+<meta property="og:image" content="https://anqatech.github.io/myblog/posts/kane-equations/image.jpg">
+<meta property="og:site_name" content="Dynamics to Intelligence">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -139,7 +151,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">My First Quarto Blog</span>
+    <span class="navbar-title">Dynamics to Intelligence</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -147,20 +159,16 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#field-notes"> 
+<span class="menu-text">Field Notes</span></a>
+  </li>  
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">Jalal El Hazzat</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -173,20 +181,23 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="S2FuZQ==">Kane <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGlib2R5">multibody <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cmVmZXJlbmNlJTIwZnJhbWU=">reference frame <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cm90YXRpb24=">rotation <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My First Quarto Blog</h1>
+<h1 class="title">Dynamics to Intelligence</h1>
+</div>
+
+<div>
+  <div class="description">
+    Modelling and controlling complex physical systems—from space structures to world models.
+  </div>
 </div>
 
 
-
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -198,79 +209,151 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="bXVsdGlib2R5JTJDcmVmZXJlbmNlJTIwZnJhbWUlMkNyb3RhdGlvbiUyQ0thbmU=" data-listing-date-sort="1750719600000" data-listing-file-modified-sort="1750770474391" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="199">
-<a href="./posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/kane-equations/image.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<div class="home-hero">
+<div class="hero-copy">
+<p class="eyebrow">
+Jalal El Hazzat · Space engineering
 </p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Kane Equations of Motion
-</h5>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bXVsdGlib2R5'); return false;">multibody</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cmVmZXJlbmNlJTIwZnJhbWU='); return false;">reference frame</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cm90YXRpb24='); return false;">rotation</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('S2FuZQ=='); return false;">Kane</div>
-
+<section id="dynamics-to-intelligence" class="level1">
+<h1>Dynamics to Intelligence</h1>
+<p class="hero-deck">
+Modelling and controlling complex physical systems—from space structures to world models.
+</p>
+<p class="hero-intro">
+A working notebook on the ideas that connect mechanics, simulation, control, and physical intelligence.
+</p>
+<div class="hero-actions">
+<p><a href="#field-notes" class="button button-primary">Explore the field notes</a> <a href="./about.html" class="button button-secondary">Read the story</a></p>
 </div>
-<div class="card-text listing-description delink">
+</section>
+</div>
+<div class="hero-visual" aria-hidden="true">
+<p class="visual-kicker">
+A working loop
+</p>
+<div class="model-loop">
+<div class="loop-node">
+<p><span class="loop-index">01</span> <strong>MODEL</strong> <small>represent</small></p>
+</div>
+<div class="loop-node">
+<p><span class="loop-index">02</span> <strong>PREDICT</strong> <small>understand</small></p>
+</div>
+<div class="loop-node">
+<p><span class="loop-index">03</span> <strong>CONTROL</strong> <small>shape</small></p>
+</div>
+</div>
+<p class="model-equation">
+ẋ = f(x, u)
+</p>
+</div>
+</div>
+<div class="journey-strip">
+<p><span class="journey-label">THE JOURNEY</span> <span>SPACE</span><i>→</i><span>GNC</span><i>→</i><span>DYNAMICS</span><i>→</i><span>FLEXIBLE STRUCTURES</span><i>→</i><span>PHYSICAL AI</span></p>
+</div>
+<div class="home-section home-intro">
+<p class="section-kicker">
+THE GUIDING QUESTION
+</p>
+<section id="how-do-we-model-a-physical-system-well-enough-to-understand-simulate-and-control-it" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-we-model-a-physical-system-well-enough-to-understand-simulate-and-control-it">How do we model a physical system well enough to understand, simulate, and control it?</h2>
+<p>The scale changes—from rigid bodies to flexible structures, from analytical equations to learned representations—but the question stays the same.</p>
+</section>
+</div>
+<div class="topic-grid">
+<div class="topic-card">
+<p><span class="topic-index">01</span></p>
+<section id="dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="dynamics">Dynamics</h3>
+<p>Rigid bodies, Kane’s equations, reference frames, and multibody systems.</p>
+</section>
+</div>
+<div class="topic-card">
+<p><span class="topic-index">02</span></p>
+<section id="flexible-structures" class="level3">
+<h3 class="anchored" data-anchor-id="flexible-structures">Flexible Structures</h3>
+<p>Beam theory, vibration modes, continuum mechanics, and finite elements.</p>
+</section>
+</div>
+<div class="topic-card">
+<p><span class="topic-index">03</span></p>
+<section id="control" class="level3">
+<h3 class="anchored" data-anchor-id="control">Control</h3>
+<p>GNC, pointing manoeuvres, vibration suppression, and input shaping.</p>
+</section>
+</div>
+<div class="topic-card">
+<p><span class="topic-index">04</span></p>
+<section id="computational-methods" class="level3">
+<h3 class="anchored" data-anchor-id="computational-methods">Computational Methods</h3>
+<p>SymPy, Simscape, numerical models, and reduced-order modelling.</p>
+</section>
+</div>
+<div class="topic-card">
+<p><span class="topic-index">05</span></p>
+<section id="physical-ai" class="level3">
+<h3 class="anchored" data-anchor-id="physical-ai">Physical AI</h3>
+<p>Learned dynamics, world models, simulation, and intelligent control.</p>
+</section>
+</div>
+</div>
+<div class="home-section notes-heading">
+<p class="section-kicker">
+WRITING IN PUBLIC
+</p>
+<section id="field-notes" class="level2">
+<h2 class="anchored" data-anchor-id="field-notes">Field notes</h2>
+<p>Derivations, experiments, and explanations from an evolving engineering practice.</p>
+</section>
+</div>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-recent-posts">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="bXVsdGlib2R5JTJDcmVmZXJlbmNlJTIwZnJhbWUlMkNyb3RhdGlvbiUyQ0thbmU=" data-listing-date-sort="1750719600000" data-listing-file-modified-sort="1785777012751" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="199">
+<div class="thumbnail"><a href="./posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html" class="no-external">
+
+<img loading="lazy" src="./posts/kane-equations/image.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html" class="no-external">Kane Equations of Motion</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html" class="no-external">
 <p>A post about multibody dynamics</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
+<div class="metadata">
+<a href="./posts/kane-equations/GAF-and-GIF-Rigid-Body-Quarto.html" class="no-external">
 <div class="listing-date">
 Jun 24, 2025
 </div>
+</a>
 </div>
 </div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="bXVsdGlib2R5JTJDcmVmZXJlbmNlJTIwZnJhbWUlMkNyb3RhdGlvbg==" data-listing-date-sort="1749596400000" data-listing-file-modified-sort="1749631101782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./posts/rotation-matrix/sympy-rotation-quarto.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/rotation-matrix/image.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Rotation Matrix
-</h5>
-<div class="listing-categories">
+<div class="quarto-post image-right" data-index="1" data-categories="bXVsdGlib2R5JTJDcmVmZXJlbmNlJTIwZnJhbWUlMkNyb3RhdGlvbg==" data-listing-date-sort="1749596400000" data-listing-file-modified-sort="1785777012755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail"><a href="./posts/rotation-matrix/sympy-rotation-quarto.html" class="no-external">
 
-<div class="listing-category" onclick="window.quartoListingCategory('bXVsdGlib2R5'); return false;">multibody</div>
+<img loading="lazy" src="./posts/rotation-matrix/image.jpg" class="thumbnail-image">
 
-<div class="listing-category" onclick="window.quartoListingCategory('cmVmZXJlbmNlJTIwZnJhbWU='); return false;">reference frame</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cm90YXRpb24='); return false;">rotation</div>
-
-</div>
-<div class="card-text listing-description delink">
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/rotation-matrix/sympy-rotation-quarto.html" class="no-external">Rotation Matrix</a>
+</h3>
+<div class="delink listing-description"><a href="./posts/rotation-matrix/sympy-rotation-quarto.html" class="no-external">
 <p>A post about sympy generated rotation matrix</p>
+</a></div>
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
+<div class="metadata">
+<a href="./posts/rotation-matrix/sympy-rotation-quarto.html" class="no-external">
 <div class="listing-date">
 Jun 11, 2025
 </div>
+</a>
 </div>
-</div>
-</div></a>
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
@@ -326,13 +409,14 @@ Jun 11, 2025
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -347,7 +431,7 @@ Jun 11, 2025
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/anqatech\.github\.io\/myblog\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -678,24 +762,19 @@ Jun 11, 2025
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>Dynamics to Intelligence</p>
+</div>   
     <div class="nav-footer-center">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
-    <a class="nav-link" href="./about.html">
-<p>About</p>
-</a>
-  </li>  
-</ul>
+      &nbsp;
     </div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p>Models are where understanding becomes control.</p>
+</div>
   </div>
 </footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,27 +1,35 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "posts/**"
+    - "!private-notes/**"
 
 website:
-  title: "My First Quarto Blog"
-  description: "A blog about multibody dynamics"
+  title: "Dynamics to Intelligence"
+  site-url: https://anqatech.github.io/myblog/
+  description: "Modelling and controlling complex physical systems—from space structures to world models."
+  open-graph: true
+  search: true
   navbar:
     pinned: true
+    title: "Dynamics to Intelligence"
+    left:
+      - text: "Field Notes"
+        href: index.qmd#field-notes
     right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
-  page-footer:
-    center: 
       - text: "About"
         href: about.qmd
+  page-footer:
+    left: "Dynamics to Intelligence"
+    right: "Models are where understanding becomes control."
 format:
   html:
     theme:
-      - minty
+      - theme.scss
     css: styles.css
-
-
-
+    smooth-scroll: true
+    anchor-sections: true
+    code-copy: true
+    code-overflow: wrap
