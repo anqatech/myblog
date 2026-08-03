@@ -480,13 +480,7 @@ a {
 }
 
 body:has(.about-body) #title-block-header {
-  width: min(1180px, calc(100% - 3rem));
-  margin: 0 auto;
-  padding-top: clamp(1.5rem, 2.5vw, 2.5rem);
-}
-
-body:has(.about-body) .quarto-title-block .quarto-title h1 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  display: none;
 }
 
 .about-body {
@@ -495,7 +489,7 @@ body:has(.about-body) .quarto-title-block .quarto-title h1 {
   gap: clamp(4rem, 10vw, 10rem);
   width: min(1180px, calc(100% - 3rem));
   margin-inline: auto;
-  padding: 0.75rem 0 clamp(6rem, 10vw, 10rem);
+  padding: clamp(3rem, 4vw, 4rem) 0 clamp(6rem, 10vw, 10rem);
 }
 
 .about-story h2 {
@@ -644,11 +638,6 @@ figcaption,
 
   .about-body {
     width: min(100% - 2rem, 1180px);
-  }
-
-  body:has(.about-body) #title-block-header {
-    width: min(100% - 2rem, 1180px);
-    padding-top: 1.5rem;
   }
 
   .hero-copy h1 {
